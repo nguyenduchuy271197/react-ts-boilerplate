@@ -7,6 +7,7 @@ import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 
 import "sanitize.css/sanitize.css";
+import "./styles/global.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
