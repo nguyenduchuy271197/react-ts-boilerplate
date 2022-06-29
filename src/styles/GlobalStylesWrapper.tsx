@@ -1,5 +1,6 @@
+import { CssBaseline } from "@mui/material";
 import { Fragment } from "react";
-import GlobalStyles from "./global.styled";
+import InputGlobalStyles from "./GlobalStyles";
 
 export interface Props {
   children: React.ReactNode;
@@ -8,7 +9,8 @@ export interface Props {
 const GlobalStylesWrapper = (props: Props) => {
   return (
     <Fragment>
-      <GlobalStyles />
+      <CssBaseline enableColorScheme />
+      <InputGlobalStyles />
       {props.children}
     </Fragment>
   );

@@ -1,26 +1,37 @@
-const lightTheme = {
-  primary: "rgba(215,113,88,1)",
-  text: "rgba(58,52,51,1)",
-  textSecondary: "rgba(58,52,51,0.7)",
-  background: "rgba(255,255,255,1)",
-  backgroundVariant: "rgba(251,249,249,1)",
-  border: "rgba(58,52,51,0.12)",
-  borderLight: "rgba(58,52,51,0.05)",
-};
+import { PaletteMode } from "@mui/material";
+import { amber, deepOrange, grey } from "@mui/material/colors";
+import { themeModesTypes } from "./types";
 
-const darkTheme: Theme = {
-  primary: "rgba(220,120,95,1)",
-  text: "rgba(241,233,231,1)",
-  textSecondary: "rgba(241,233,231,0.6)",
-  background: "rgba(0,0,0,1)",
-  backgroundVariant: "rgba(28,26,26,1)",
-  border: "rgba(241,233,231,0.15)",
-  borderLight: "rgba(241,233,231,0.05)",
-};
+export const getDesignTokens = (mode: PaletteMode) => ({
+  palette: {
+    mode,
+    ...(mode === "light"
+      ? {
+          // palette values for light mode
+          primary: amber,
+          divider: amber[200],
+          text: {
+            primary: grey[900],
+            secondary: grey[800],
+          },
+        }
+      : {
+          // palette values for dark mode
+          primary: deepOrange,
+          divider: deepOrange[700],
+          background: {
+            default: deepOrange[900],
+            paper: deepOrange[900],
+          },
+          text: {
+            primary: "#fff",
+            secondary: grey[500],
+          },
+        }),
+  },
+});
 
-export type Theme = typeof lightTheme;
-
-export const themes = {
-  light: lightTheme,
-  dark: darkTheme,
+export const themeModes: themeModesTypes = {
+  light: "light",
+  dark: "dark",
 };

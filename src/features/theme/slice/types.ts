@@ -1,7 +1,5 @@
-import { themes } from "../themes";
-
-export type ThemeKeyType = keyof typeof themes | "system";
+import { PaletteMode } from "@mui/material";
 
 export interface ThemeState {
-  selected: ThemeKeyType;
+  selected: PaletteMode;
 }

@@ -19,7 +19,7 @@ import ThemeProvider from "./features/theme/ThemeProvider";
 import { HelmetProvider } from "react-helmet-async";
 
 // Initialize languages
-import "./locales/i18n";
+// import "./locales/i18n";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStylesWrapper from "./styles/GlobalStylesWrapper";
 

@@ -1,15 +1,11 @@
-import { ThemeKeyType } from "./slice/types";
+import { PaletteMode } from "@mui/material";
 
-export const isSystemDark = window?.matchMedia
-  ? window.matchMedia("(prefers-color-scheme: dark)")?.matches
-  : undefined;
-
-export function saveTheme(theme: ThemeKeyType) {
+export function saveTheme(theme: PaletteMode) {
   window.localStorage && localStorage.setItem("selectedTheme", theme);
 }
 
-export function getThemeFromStorage(): ThemeKeyType | null {
+export function getThemeFromStorage(): PaletteMode | null {
   return window.localStorage
-    ? (localStorage.getItem("selectedTheme") as ThemeKeyType) || null
+    ? (localStorage.getItem("selectedTheme") as PaletteMode) || null
     : null;
 }
