@@ -15,7 +15,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
   { name: "Courses", path: "/courses" },
   { name: "Blog", path: "/blog" },
 ];
@@ -80,9 +80,9 @@ const NavList = () => {
         >
           {pages.map(({ name, path }) => (
             <MenuItem key={path} onClick={handleCloseNavMenu}>
-              <Link to={path}>
-                <Typography textAlign="center">{name}</Typography>
-              </Link>
+              <Typography textAlign="center">
+                <Link to={path}>{name}</Link>
+              </Typography>
             </MenuItem>
           ))}
         </Menu>

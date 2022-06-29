@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import GlobalStylesWrapper from "./components/GlobalStyles";
 import AppRoutes from "./routes";
 
 const App = () => {
@@ -10,7 +11,9 @@ const App = () => {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <AppRoutes />
+      <GlobalStylesWrapper>
+        <AppRoutes />
+      </GlobalStylesWrapper>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 
 import "sanitize.css/sanitize.css";
-import "./styles/global.css";
+import "./styles/global.scss";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -22,7 +22,6 @@ import { HelmetProvider } from "react-helmet-async";
 // Initialize languages
 // import "./locales/i18n";
 import { BrowserRouter } from "react-router-dom";
-import GlobalStylesWrapper from "./styles/GlobalStylesWrapper";
 
 // Observe loading of Inter (to remove 'Inter', remove the <link> tag in
 // the index.html file and this observer)
@@ -41,11 +40,9 @@ root.render(
     <Provider store={store}>
       <ThemeProvider>
         <HelmetProvider>
-          <GlobalStylesWrapper>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </GlobalStylesWrapper>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </HelmetProvider>
       </ThemeProvider>
     </Provider>

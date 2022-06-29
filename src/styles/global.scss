@@ -7,10 +7,10 @@ body {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
-body.fontLoaded {
-  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  &.fontLoaded {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 }
 
 a {
@@ -22,6 +22,7 @@ p,
 label {
   line-height: 1.5em;
 }
+
 input,
 select,
 button {
