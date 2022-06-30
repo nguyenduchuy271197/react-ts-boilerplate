@@ -1,15 +1,6 @@
-import {
-  Avatar,
-  Box,
-  IconButton,
-  Menu,
-  MenuItem,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, IconButton, Tooltip } from "@mui/material";
 import { Fragment, useState } from "react";
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import UserMenuList from "./UserMenuList";
 
 const UserMenu = () => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -21,6 +12,7 @@ const UserMenu = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   return (
     <Fragment>
       <Box sx={{ flexGrow: 0 }}>
@@ -29,28 +21,8 @@ const UserMenu = () => {
             <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
           </IconButton>
         </Tooltip>
-        <Menu
-          sx={{ mt: "45px" }}
-          id="menu-appbar"
-          anchorEl={anchorElUser}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={Boolean(anchorElUser)}
-          onClose={handleCloseUserMenu}
-        >
-          {settings.map((setting) => (
-            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
-        </Menu>
+
+        <UserMenuList handleCloseUserMenu={handleCloseUserMenu} />
       </Box>
     </Fragment>
   );
